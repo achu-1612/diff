@@ -51,3 +51,9 @@ func (l *Logger) Log(format string, args ...interface{}) {
 		fmt.Print(msg)
 	}
 }
+
+func (l *Logger) Close() {
+	if l.logFile != nil {
+		l.logFile.Close()
+	}
+}
